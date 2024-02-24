@@ -38,3 +38,23 @@ const users = [
 const names = users.map(user => user.name);
 
 console.log(names); // Output: ["FATOS", "eldaS", "aida"]
+const names  = users.map(user => user.name);   //mapping through every single item
+console.log(names);
+
+method 2: 
+const names = []; create an array
+for(let i =0 ; i< users.length; i++) {
+    names.push(users[i].name);    //push into the empty array
+
+    console.log(names);
+}
+*/
+
+
+method 3 
+const names = []
+users.forEach((user => {
+    names.push(user.name);
+})
+
+
