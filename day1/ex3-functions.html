@@ -1,0 +1,55 @@
+<!-- 1. Create an unordered list with some elements (any number) -->
+<!-- 2. Prompt for a number
+3. Create a function that:
+ a) Takes a number argument
+ b) Paints in red an element from the unordered list at the index of the number argument above
+
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <script>
+    window.onload = function () {
+      let number = prompt("Enter a number:");
+      number = parseInt(number);
+
+      if (!isNaN(number)) {
+        paint(number);
+      } else {
+        alert("pls enter a valid number");
+      }
+    };
+
+    function paint(index) {
+      //get all the list items
+      const listItems = document.querySelectorAll("ul li");
+
+      //check if the index is valid
+      if (index >= 0 && index < listItems.length) {
+        //reset all items bg colors
+        listItems.forEach((item) => (item.style.backgroundColor = "lightgray"));
+
+        //paint in red the list item at the index
+        listItems[index].style.backgroundColor = "red";
+      } else {
+        alert("Invalid index");
+      }
+    }
+  </script>
+  <body>
+    <ul>
+      <li>2</li>
+      <li>55</li>
+      <li>122</li>
+      <li>777</li>
+      <li>999</li>
+    </ul>
+  </body>
+</html>
